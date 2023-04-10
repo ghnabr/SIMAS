@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin SIMAS</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="shortcut icon" href="images/logodoang.png">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logosimas.png" class="mr-2" alt="SIMAS"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logodoang.png" alt="SIMAS"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" data-toggle="modal" data-target="#profil">
+                <i class="ti-user text-primary"></i>
+                Profil
+              </a>
+              <a class="dropdown-item" href="LoginSimas/login.html">
+                <i class="ti-power-off text-primary"></i>
+                Keluar
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-settings d-none d-lg-flex">
+            <a class="nav-link" href="#">
+              <i class="icon-ellipsis"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                </div>
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Team review meeting at 3.00 PM
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Prepare for presentation
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Resolve all the low priority tickets due today
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Schedule meeting for next week
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Project review
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#pagemaster" aria-expanded="false" aria-controls="pagemaster">
+              <i class="icon-folder menu-icon"></i>
+              <span class="menu-title">Master Data</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="pagemaster">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="pagemaster/mastersiswa.html">Siswa</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterguru.html">Guru</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterkaryawan.html">Karyawan</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterwalikelas.html">Wali Kelas</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterkelas.html">Kelas</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterjabatan.html">Jabatan</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/mastermapel.html">Mata Pelajaran</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterkompetensikeahlian.html">Kompetesi Keahlian</a>
+                <li class="nav-item"><a class="nav-link" href="pagemaster/masterprogramkeahlian.html">Program Keahlian</a>
+              </ul>
+            </div>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tu" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-mail menu-icon"></i>
+              <span class="menu-title">Tata Usaha</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tu">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="pagetu/suratmasuk.html">Surat Masuk</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagetu/suratkeluar.html">Surat Keluar</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagetu/pengajuansurat.html">Pengajuan Surat</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagetu/petunjuksurat.html">Nomor Petunjuk<br>Surat</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!--CARD-->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Selamat Datang, Admin!</h3>
+                  <h6 class="font-weight-normal mb-0">Web Admin Simas | <span class="text-primary">SIMAS</span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-tale">
+                    <div class="card-body">
+                      <p><h4><i class="mdi mdi-account-multiple mx-2"></i>Jumlah Siswa</h4></p>
+                      <br>
+                      <p class="fs-30 mb-2">3105</p>
+                      <p>April 2023</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body">
+                      <p><h4><i class="mdi mdi-account-multiple mx-2"></i>Jumlah Guru</h4></p>
+                      <br>
+                      <p class="fs-30 mb-2">265</p>
+                      <p>April 2023</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body">
+                      <p><h4><i class="mdi mdi-account-multiple mx-2"></i>Jumlah Karyawan</h4></p>
+                      <br>
+                      <p class="fs-30 mb-2">569</p>
+                      <p>April 2023</p>
+                    </div>
+                  </div>
+                </div> 
+            </div>
+          </div>
+
+
+          <!--CHARTS PELANGGARAN-->
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card position-relative">
+                <div class="card-body">
+                  <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="row">
+                          <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
+                            <div class="ml-xl-4 mt-3">
+                            <p class="card-title">Pelanggaran Siswa</p>
+                              <h2 class="text-primary">April 2023</h2>
+                              <h4 class="font-weight-500 mb-xl-4 text-primary">Minggu Pertama</h4>
+                              <p class="mb-2 mb-xl-0">Total pelanggaran siswa SMKN 4 Malang tahun 2023 bulan April pada mingggu pertama.</p>
+                            </div>  
+                            </div>
+                          <div class="col-md-12 col-xl-9">
+                            <div class="row">
+                              <div class="col-md-6 border-right">
+                                <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                  <table class="table table-borderless report-table">
+                                    <tr>
+                                      <td class="text-muted">Terlambat</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-primary" role="progressbar" style="width: 97%" aria-valuenow="97%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">1100</h5></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="text-muted">Merokok</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="text-muted">Kerapian</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="text-muted">Alpha</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">664</h5></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="text-muted">Kelakuan</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">560</h5></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="text-muted">Alaska</td>
+                                      <td class="w-100 px-0">
+                                        <div class="progress progress-md mx-4">
+                                          <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                      </td>
+                                      <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-6 mt-3">
+                                <canvas id="north-america-chart"></canvas>
+                                <div id="north-america-legend"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          
+
+          <!--SOSMED ICT-->
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-x50-20 mb-1 mb-x1-0">
+                  <h3 class="font-weight-bold">Sosmed SMKN 4 Malang</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 grid-margin">
+              <a href="https://smkn4malang.sch.id" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+                    <i class='fa-solid fa-code fa-2x text-black'></i>
+                    <div class="col-12">
+											<h6 class="text-black">Website</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+            <div class="col-md-3 grid-margin">
+              <a href="https://www.youtube.com/c/SMKN4MalangOfficial" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<i class="ti-youtube text-youtube icon-md"></i>
+										<div class="col-12">
+											<h6 class="text-youtube">Youtube</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+            <div class="col-md-3 grid-margin">
+              <a href="https://www.instagram.com/smkn4malang.official" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<i class="ti-instagram text-instagram icon-md"></i>
+										<div class="col-12">
+											<h6 class="text-instagram1">Instagram</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+            <div class="col-md-3 grid-margin">
+              <a href="https://www.instagram.com/bkksmkn4malang" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<i class="ti-instagram text-instagram icon-md"></i>
+										<div class="col-12">
+											<h6 class="text-instagram1">Instagram BKK</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+						<div class="col-md-3 grid-margin">
+              <a href="https://twitter.com/smkn4malang" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<i class="ti-twitter-alt text-twitter icon-md"></i>
+										<div class="col-12">
+											<h6 class="text-twitter">Twitter</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+          
+            <div class="col-md-3 grid-margin">
+              <a href="https://www.facebook.com/smknegeri4malang" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<i class="ti-facebook text-facebook icon-md"></i>
+										<div class="col-12">
+											<h6 class="text-facebook">Facebook</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+						<div class="col-md-3 grid-margin">
+              <a href="https://www.tiktok.com/@smkn4malang.official" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+                    <i class='fab fa-tiktok fa-2x text-black'></i>
+                    <div class="col-12">
+											<h6 class="text-black">Tiktok</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div></a>
+						</div>
+
+            <div class="col-md-3 grid-margin">
+              <a href="https://t.me/bkksmkn4malang" target="_blank">
+							<div class="card d-flex align-items-center">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+                    <i class='fab fa-telegram fa-2x text-telegram'></i>
+                    <div class="col-12">
+											<h6 class="text-telegram">Telegram</h6>
+											<p class="mt-2 text-muted card-text">SMKN 4 Malang</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div></a>
+          </div>
+
+
+         <!-- PROFIL KONTEN-->
+         <div id="profil" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">PROFIL</h4>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="info">
+                    <div class="info_data">      
+                      <div class="data">
+                        <h4>Nama Pengguna</h4>
+                        <p>Shiero</p>                          
+                      </div>
+                      <br>                    
+                      <div class="data">
+                        <h4>Email</h4>
+                        <p>alex@gmail.com</p>
+                      </div>
+                      <br>
+                      <div class="data">
+                        <h4>Kata Sandi</h4>
+                        <span data-hidden-value="12345678">
+                          <span class="display">********</span><br>
+                          <a class="toggle">Lihat Sandi</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Keluar</button>
+              </div> 
+            </div> 
+          </div>
+        </div>
+        </div>
+
+          <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+          <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+          <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+
+          </div>
+  
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+  
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script>
+      $('[data-hidden-value] > .toggle').on('click', function () {
+        var
+          $wrapper = $(this).parent(),
+          $display = $wrapper.find('.display'),
+          revealed = $wrapper.data('revealed'),
+          hiddenValue = String($wrapper.data('hidden-value'));
+  
+        $display.html(revealed ? hiddenValue.replace(/./g, '*') : hiddenValue);
+        $wrapper.data('revealed', !revealed);
+      });
+    </script>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+  
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+  
+  </html>
+  
