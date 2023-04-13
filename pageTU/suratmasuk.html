@@ -84,6 +84,7 @@
         </button>
       </div>
     </nav>
+
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -185,35 +186,33 @@
       </div>
 
 
-      <!-- MENU -->
+      <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">
+            <a class="nav-link" href="/index.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#pagemaster" aria-expanded="false"
-              aria-controls="pagemaster">
+            <a class="nav-link" data-toggle="collapse" href="#pagemaster" aria-expanded="false" aria-controls="pagemaster">
               <i class="icon-folder menu-icon"></i>
               <span class="menu-title">Master Data</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="pagemaster">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../pageMaster/mastersiswa.html">Siswa</a>
-                <li class="nav-item"><a class="nav-link" href="../pageMaster/masterguru.html">Guru</a>
-                <li class="nav-item"><a class="nav-link" href="../pageMaster/masterkaryawan.html">Karyawan</a>
-                <li class="nav-item"><a class="nav-link" href="../pageMaster/masterwalikelas.html">Wali Kelas</a>
-                <li class="nav-item"><a class="nav-link" href="#">Kelas</a>
-                <li class="nav-item"><a class="nav-link" href="../pagemaster/masterjabatan.html">Jabatan</a>
-                <li class="nav-item"><a class="nav-link" href="../pagemaster/mastermapel.html">Mata Pelajaran</a>
-                <li class="nav-item"><a class="nav-link" href="../pagemaster/masterkompetensikeahlian.html">Kompetesi
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/mastersiswa.html">Siswa</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterguru.html">Guru</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterkaryawan.html">Karyawan</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterwalikelas.html">Wali Kelas</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterkelas.html">Kelas</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterjabatan.html">Jabatan</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/mastermapel.html">Mata Pelajaran</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterkompetensikeahlian.html">Kompetesi
                     Keahlian</a>
-                <li class="nav-item"><a class="nav-link" href="../pagemaster/masterprogramkeahlian.html">Program
-                    Keahlian</a>
+                <li class="nav-item"><a class="nav-link" href="/pageMaster/masterprogramkeahlian.html">Program Keahlian</a>
               </ul>
             </div>
           </li>
@@ -225,16 +224,22 @@
             </a>
             <div class="collapse" id="tu">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../pagetu/suratmasuk.html">Surat Masuk</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pagetu/suratkeluar.html">Surat Keluar</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pagetu/pengajuansurat.html">Pengajuan Surat</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pagetu/petunjuksurat.html">Nomor Petunjuk<br>Surat</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="/pageTU/suratmasuk.html">Surat Masuk</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pagetu/suratkeluar.html">Surat Keluar</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pagetu/pengajuansurat.html">Pengajuan Surat</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pagetu/petunjuksurat.html">Nomor Petunjuk<br>Surat</a></li>
               </ul>
             </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/riwayat.html">
+              <i class="ti-time menu-icon"></i>
+              <span class="menu-title">Riwayat</span>
+            </a>
+          </li>
           </li>
         </ul>
       </nav>
+      
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -243,7 +248,7 @@
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">TU Surat Masuk</h3>
-                  <h6 class="font-weight-normal mb-0">Web Admin | <span class="text-primary">SIMAS</span></h6>
+                  <h6 class="font-weight-normal mb-0">Web Administrator | <span class="text-primary">SIMAS</span></h6>
                 </div>
               </div>
             </div>
@@ -274,14 +279,14 @@
                         <tr>
                           <td>1</td>
                           <td>
-                            <button type="button" class="btn btn-circle">
-                              <i class="mdi mdi-information-outline"></i>
-                            </button>
                             <a href="#">
-                              <div class="badge badge-success"><i class="ti ti-pencil"></i></div>
+                              <div class="badge badge-info" tite="Selengkapnya"><i class="ti ti-info"></i></div>
                             </a>
                             <a href="#">
-                              <div class="badge badge-danger"><i class="ti ti-trash"></i></div>
+                              <div class="badge badge-success" title="Ubah"><i class="ti ti-pencil"></i></div>
+                            </a>
+                            <a href="#">
+                              <div class="badge badge-danger" title="Hapus"><i class="ti ti-trash"></i></div>
                             </a>
                           </td>
                           <td>0085</td>
@@ -296,10 +301,13 @@
                           <td>2</td>
                           <td>
                             <a href="#">
-                              <div class="badge badge-success"><i class="ti ti-pencil"></i></div>
+                              <div class="badge badge-info" tite="Selengkapnya"><i class="ti ti-info"></i></div>
                             </a>
                             <a href="#">
-                              <div class="badge badge-danger"><i class="ti ti-trash"></i></div>
+                              <div class="badge badge-success" title="Ubah"><i class="ti ti-pencil"></i></div>
+                            </a>
+                            <a href="#">
+                              <div class="badge badge-danger" title="Hapus"><i class="ti ti-trash"></i></div>
                             </a>
                           </td>
                           <td>0086</td>
@@ -314,10 +322,13 @@
                           <td>3</td>
                           <td>
                             <a href="#">
-                              <div class="badge badge-success"><i class="ti ti-pencil"></i></div>
+                              <div class="badge badge-info" tite="Selengkapnya"><i class="ti ti-info"></i></div>
                             </a>
                             <a href="#">
-                              <div class="badge badge-danger"><i class="ti ti-trash"></i></div>
+                              <div class="badge badge-success" title="Ubah"><i class="ti ti-pencil"></i></div>
+                            </a>
+                            <a href="#">
+                              <div class="badge badge-danger" title="Hapus"><i class="ti ti-trash"></i></div>
                             </a>
                           </td>
                           <td>0087</td>
@@ -361,7 +372,7 @@
                     </div>
                     <div class="form-group">
                       <label for="tglsurat">Tanggal Surat</label>
-                      <input type="date" class="form-control form-control-lg" id="tgl" placeholder="Tanggal Surat" required/>
+                      <input type="date" class="form-control form-control-lg" id="tgl" placeholder="Tanggal Surat"/>
                     </div>
                     <div class="form-group">
                       <label for="perihal">Perihal</label>
@@ -419,13 +430,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> <!-- profil konten ends -->
+        </div><!-- content-wrapper ends -->
 
-
-        </div>
-
-
-        <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -436,32 +443,26 @@
                 class="ti-heart text-danger ml-1"></i></span>
           </div>
         </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
+      </div><!-- main-panel ends -->
+    </div><!-- page-body-wrapper ends -->
+  </div><!-- container-scroller ends -->
+
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <!-- End plugin js for this page -->
 
-
-
   <!-- inject:js -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
   <script>
     $(document).ready(function () {
       $('#example').DataTable();
     });
-  </script>
 
-  <script>
     $('[data-hidden-value] > .toggle').on('click', function () {
       var
         $wrapper = $(this).parent(),
@@ -472,7 +473,15 @@
       $display.html(revealed ? hiddenValue.replace(/./g, '*') : hiddenValue);
       $wrapper.data('revealed', !revealed);
     });
+
+    $(document).ready(function () {
+      $('#example').DataTable();
+    });
+    $('#example').on('click', '.badge-danger', function () {
+      $(this).closest('tr').remove();
+    });
   </script>
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
