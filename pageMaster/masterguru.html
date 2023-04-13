@@ -14,6 +14,8 @@
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
@@ -58,7 +60,7 @@
                 <i class="ti-user text-primary"></i>
                 Profil
               </a>
-              <a class="dropdown-item" href="login/login.html">
+              <a class="dropdown-item" href="../login/login.html">
                 <i class="ti-power-off text-primary"></i>
                 Keluar
               </a>
@@ -217,7 +219,6 @@
         </ul>
       </nav>
 
-
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -238,14 +239,17 @@
            </div>
          </div>
         
-
- 
-
           <button data-toggle="modal" data-target="#tambahdata" type="button" class="btn btn-primary mb-3">Tambah Data Guru</button>
-
-          <br><br>
+          <button data-toggle="modal" data-target="#riwayathapus" type="button" class="btn btn-primary mb-3">Riwayat Hapus</button>
+          <br>
+          
+          <div class="alert alert-success alert-dismissible" id="myAlert">
+            <i class="mdi mdi-checkbox-marked-outline"></i> Data Berhasil Ditambahkan
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
 
           
+
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
@@ -296,7 +300,7 @@
                               <td>Sudah</td>
                               <td>Jasa Boga</td>
                               <td>Menikah</td>
-                              <td>Ft</td>
+                              <td><img src="../images/ft.jpeg" width="200px" style="border-radius: 100px; -moz-border-radius: 100px;"></td>
                           </tr>
                       </tbody>
                       <tfoot>
@@ -327,6 +331,9 @@
               </div>
             </div>
 
+
+
+        <!--TAMBAH DATA-->    
         <div id="tambahdata" class="modal fade" role="dialog">
           <div class="modal-dialog">
         
@@ -339,25 +346,103 @@
               <div class="modal-body">
                 <form>
              <div class="form-group">
-              <label for="exampleInputEmail1">Nama</label>
-              <input type="text" class="form-control" id="Fullname" placeholder="Fullname">
+              <label for="exampleInputNama">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Kelas</label>
-              <input type="text" class="form-control" id="username" placeholder="Username">
+              <label>Jenis Kelamin</label><br>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="jk1" name="jenisklmn" class="custom-control-input">
+                <label class="custom-control-label" for="jk1">Laki-laki</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="jk2" name="jenisklmn" class="custom-control-input">
+                <label class="custom-control-label" for="jk2">Perempuan</label>
+              </div>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Jurusan</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <label for="exampleInputTempatLahir">Tempat Lahir</label>
+              <input type="text" class="form-control" id="TempatLahir" placeholder="Tempat Lahir">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Tanggal Lahir</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="exampleInputTglLahir">Tanggal Lahir</label>
+              <input type="date" class="form-control" id="tglLahir" placeholder="Tanggal Lahir">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputAlmt">Alamat Lengkap</label>
+              <input type="text" class="form-control" id="AlmtLngkp" placeholder="Alamat Lengkap">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPndidikanTrkhr">Pendidikan Terakhir</label>
+              <input type="text" class="form-control" id="PndidikanTrkhr" placeholder="Pendidikan Terakhir">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJrusanPndidikanTrkhr"> Jurusan Pendidikan Terakhir</label>
+              <input type="text" class="form-control" id="JrusanPndidikanTrkhr" placeholder="Jurusan Pendidikan Terakhir">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputNoHp"> No. HP</label>
+              <input type="text" class="form-control" id="nohp" placeholder="No. HP">
+            </div>
+            <div class="form-group">
+              <label>Kategori :</label>
+              <select name="kategori">
+                  <option value="ASN">ASN</option>
+                  <option value="PPPK">PPPK</option>
+                  <option value="GTT">GTT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputMapel"> Mapel</label>
+              <input type="text" class="form-control" id="nohp" placeholder="Mapel yang diampu">
+            </div>
+            <div class="form-group">
+              <label>Kategori :</label>
+              <select name="kategori">
+                  <option value="Umum">Umum</option>
+                  <option value="BK">BK</option>
+                  <option value="Kejuruan">Kejuruan</option>
+                  <option value="Kewilayahan">Kewilayahan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputNIP"> NIP</label>
+              <input type="text" class="form-control" id="nip" placeholder="NIP">
+            </div>
+            <div class="form-group">
+              <label>Status Sertifikasi</label><br>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="stts1" name="sttssertifikasi" class="custom-control-input">
+                <label class="custom-control-label" for="stts1">Sudah</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="stts2" name="sttssertifikasi" class="custom-control-input">
+                <label class="custom-control-label" for="stts2">Belum</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputKeahlianGanda"> Keahlian Ganda</label>
+              <input type="text" class="form-control" id="keahlianganda" placeholder="Keahlian Ganda">
+            </div>
+            <div class="form-group">
+              <label>Status Menikah</label><br>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sttsnikah1" name="sttsmnikah" class="custom-control-input">
+                <label class="custom-control-label" for="sttsnikah1">Menikah</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sttsnikah2" name="sttsmnikah" class="custom-control-input">
+                <label class="custom-control-label" for="sttsnikah2">Belum</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputKeahlianGanda"> Upload Foto</label><br>
+                <input type="file" value="upload gambar"/>
             </div>
           </form>
               </div>
               <div class="modal-footer">
-               <button type="button" class="btn btn-success" data-dismiss="modal">Tambah</button>
+               <button type="button" onclick="myFunction()" class="btn btn-primary" data-dismiss="modal">Tambah</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
               </div>
             </div>
@@ -404,7 +489,6 @@
             </div> 
           </div>
         </div>
-
 
           </div>
           </div>
@@ -454,11 +538,26 @@
       $wrapper.data('revealed', !revealed);
     });
   </script>
+
+  <script>
+    var myAlert = document.getElementById('myAlert');
+
+    myAlert.style.display = 'none'
+  </script>
+
+  <script>
+    function myFunction(){
+      myAlert.style.display = 'block'
+    }
+  </script>
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
+
+  
   <!-- endinject -->
 </body>
 

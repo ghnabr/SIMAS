@@ -58,7 +58,7 @@
                 <i class="ti-user text-primary"></i>
                 Profil
               </a>
-              <a class="dropdown-item" href="login/login.html">
+              <a class="dropdown-item" href="../login/login.html">
                 <i class="ti-power-off text-primary"></i>
                 Keluar
               </a>
@@ -241,7 +241,7 @@
 
           <button data-toggle="modal" data-target="#tambahdata" type="button" class="btn btn-primary mb-3">Tambah Data Kelas</button>
 
-          <br><br>
+          <br>
 
           
           <div class="row">
@@ -322,26 +322,51 @@
               </div>
               <div class="modal-body">
                 <form>
-             <div class="form-group">
-              <label for="exampleInputEmail1">Nama</label>
-              <input type="text" class="form-control" id="Fullname" placeholder="Fullname">
+                  <div class="form-group">
+                    <label>Kode Kelas</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk1" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk1">X</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk2" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk2">XI</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk3" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk3">XII</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk4" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk4">XIII</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Jurusan :</label>
+                    <select name="jurusan">
+                        <option value="konghucu">Animasi</option>
+                        <option value="islam">DKV</option>
+                        <option value="kristen">TG</option>
+                        <option value="katolik">RPL</option>
+                        <option value="hindu">TKJ</option>
+                        <option value="budha">TM</option>
+                        <option value="konghucu">PH</option>
+                        <option value="konghucu">TL</option>
+                    </select>
+                  </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Kode Kelas</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Kode Kelas">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Kelas</label>
-              <input type="text" class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Jurusan</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Tanggal Lahir</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="exampleInputPassword1">Ruang Kelas</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ruang Kelas">
             </div>
           </form>
               </div>
               <div class="modal-footer">
-               <button type="button" class="btn btn-success" data-dismiss="modal">Tambah</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal">Tambah</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
               </div>
             </div>

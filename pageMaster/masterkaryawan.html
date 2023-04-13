@@ -58,7 +58,7 @@
                 <i class="ti-user text-primary"></i>
                 Profil
               </a>
-              <a class="dropdown-item" href="login/login.html">
+              <a class="dropdown-item" href="../login/login.html">
                 <i class="ti-power-off text-primary"></i>
                 Keluar
               </a>
@@ -241,7 +241,7 @@
 
           <button data-toggle="modal" data-target="#tambahdata" type="button" class="btn btn-primary mb-3">Tambah Data Karyawan</button>
 
-          <br><br>
+          <br>
 
           
           <div class="row">
@@ -284,7 +284,7 @@
                               <td>082336964054</td>
                               <td>PTT</td>
                               <td>Menikah</td>
-                              <td>Ft</td>
+                              <td><img src="../images/ft.jpeg" width="200px" style="border-radius: 100px; -moz-border-radius: 100px;"></td>
                           </tr>
                       </tbody>
                       <tfoot>
@@ -321,26 +321,72 @@
               </div>
               <div class="modal-body">
                 <form>
-             <div class="form-group">
-              <label for="exampleInputEmail1">Nama</label>
-              <input type="text" class="form-control" id="Fullname" placeholder="Fullname">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Kelas</label>
-              <input type="text" class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Jurusan</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Tanggal Lahir</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
+                  <div class="form-group">
+                    <label for="exampleInputNama">Nama</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap">
+                  </div>
+                  <div class="form-group">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk1" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk1">Laki-laki</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jk2" name="jenisklmn" class="custom-control-input">
+                      <label class="custom-control-label" for="jk2">Perempuan</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputTempatLahir">Tempat Lahir</label>
+                    <input type="text" class="form-control" id="TempatLahir" placeholder="Tempat Lahir">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputTglLahir">Tanggal Lahir</label>
+                    <input type="date" class="form-control" id="tglLahir" placeholder="Tanggal Lahir">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputAlmt">Alamat Lengkap</label>
+                    <input type="text" class="form-control" id="AlmtLngkp" placeholder="Alamat Lengkap">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPndidikanTrkhr">Pendidikan Terakhir</label>
+                    <input type="text" class="form-control" id="PndidikanTrkhr" placeholder="Pendidikan Terakhir">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputJrusanPndidikanTrkhr"> Jurusan Pendidikan Terakhir</label>
+                    <input type="text" class="form-control" id="JrusanPndidikanTrkhr" placeholder="Jurusan Pendidikan Terakhir">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputNoHp"> No. HP</label>
+                    <input type="text" class="form-control" id="nohp" placeholder="No. HP">
+                  </div>
+                  <div class="form-group">
+                    <label>Kategori :</label>
+                    <select name="kategori">
+                        <option value="PTT">PTT</option>
+                        <option value="CS">CS</option>
+                        <option value="Satpam">Satpam</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Status Menikah</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="sttsnikah1" name="sttsmnikah" class="custom-control-input">
+                      <label class="custom-control-label" for="sttsnikah1">Menikah</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="sttsnikah2" name="sttsmnikah" class="custom-control-input">
+                      <label class="custom-control-label" for="sttsnikah2">Belum</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputKeahlianGanda"> Upload Foto</label><br>
+                      <input type="file" value="upload gambar"/>
+                  </div>
           </form>
               </div>
               <div class="modal-footer">
-               <button type="button" class="btn btn-success" data-dismiss="modal">Tambah</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal">Tambah</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
               </div>
             </div>

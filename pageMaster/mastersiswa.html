@@ -58,7 +58,7 @@
                 <i class="ti-user text-primary"></i>
                 Profil
               </a>
-              <a class="dropdown-item" href="LoginSimas/login.html">
+              <a class="dropdown-item" href="../login/login.html">
                 <i class="ti-power-off text-primary"></i>
                 Keluar
               </a>
@@ -255,18 +255,18 @@
               <i class="ti-file btn-icon-prepend"></i>
                 Kelas XII
               </button></a>
-              <a  href="../pagemaster/pagemastersiswa/kelasX.html" style="text-decoration: none;">
-                <button href="../pagemaster/pagemastersiswa/kelasX.html" type="button" class="btn btn-primary btn-icon-text">
+              <a  href="../pagemaster/pagemastersiswa/kelasXIII.html" style="text-decoration: none;">
+                <button href="../pagemaster/pagemastersiswa/kelasXIII.html" type="button" class="btn btn-primary btn-icon-text">
                   <i class="ti-file btn-icon-prepend"></i>
                   Kelas XIII
                 </button></a>
 
 
-          <br><br><br>
+          <br><br>
 
           <button data-toggle="modal" data-target="#tambahdata" type="button" class="btn btn-primary mb-3">Tambah Data Siswa</button>
 
-          <br><br>
+          <br>
 
           
           <div class="row">
@@ -372,25 +372,113 @@
               <div class="modal-body">
                 <form>
              <div class="form-group">
-              <label for="exampleInputEmail1">Nama</label>
-              <input type="text" class="form-control" id="Fullname" placeholder="Fullname">
+              <label for="exampleInputNISN">NISN</label>
+              <input type="text" class="form-control" id="nisn" placeholder="NISN">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Kelas</label>
-              <input type="text" class="form-control" id="username" placeholder="Username">
+              <label for="exampleInputNIS">NIS</label>
+              <input type="text" class="form-control" id="nis" placeholder="NIS">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Jurusan</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <label for="exampleInputNama">Nama</label>
+              <input type="email" class="form-control" id="nama" placeholder="Nama Lengkap">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Tanggal Lahir</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="exampleInputJalur">Jalur</label>
+              <input type="text" class="form-control" id="jalur" placeholder="Jalur Masuk">
             </div>
+            <div class="form-group">
+              <label>Jurusan :</label>
+              <select name="jurusan">
+                  <option value="konghucu">Animasi</option>
+                  <option value="islam">DKV</option>
+                  <option value="kristen">TG</option>
+                  <option value="katolik">RPL</option>
+                  <option value="hindu">TKJ</option>
+                  <option value="budha">TM</option>
+                  <option value="konghucu">PH</option>
+                  <option value="konghucu">TL</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">Alamat</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="Alamat Lengkap">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">No. HP</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="Nomer HP">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">Ayah</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="Nama Ayah">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">Ibu</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="Nama Ibu">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">No. Hp Ortu</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="No. HP Orang Tua">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">Wali</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="Nama Wali">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputJurusan">No. HP Wali</label>
+              <input type="text" class="form-control" id="jurusan" placeholder="No. HP Wali">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputTglLahir">Tahun Diterima</label>
+              <input type="date" class="form-control" id="tglLahir" placeholder="Tahun diterima">
+            </div>
+            <div class="form-group">
+              <label>Agama :</label>
+              <select name="kategori">
+                  <option value="islam">Islam</option>
+                  <option value="kristen">Kristen</option>
+                  <option value="katolik">Katolik</option>
+                  <option value="hindu">Hindu</option>
+                  <option value="budha">Budha</option>
+                  <option value="konghucu">Konghucu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Jenis Kelamin</label><br>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="jk1" name="jenisklmn" class="custom-control-input">
+                <label class="custom-control-label" for="jk1">Laki-laki</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="jk2" name="jenisklmn" class="custom-control-input">
+                <label class="custom-control-label" for="jk2">Perempuan</label>
+              </div>
+            </div>
+              <div class="form-group">
+                <label for="exampleInputJurusan">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempatlahir" placeholder="Tempat Lahir">
+              </div>
+              <div class="form-group">
+                <label>Kelas :</label>
+                <select name="kategori">
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>
+                    <option value="XIII">XIII</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputTglLahir">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tglLahir" placeholder="Tanggal Lahir">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputJurusan">Usia</label>
+                <input type="text" class="form-control" id="tempatlahir" placeholder="Usia">
+              </div>
           </form>
               </div>
               <div class="modal-footer">
-               <button type="button" class="btn btn-success" data-dismiss="modal">Tambah</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal">Tambah</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
               </div>
             </div>
@@ -493,6 +581,10 @@
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
   <!-- endinject -->
+
+  
+
+
 </body>
 
 </html>
